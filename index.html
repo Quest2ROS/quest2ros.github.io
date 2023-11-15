@@ -1,0 +1,239 @@
+<!DOCTYPE HTML>
+<!--
+	Hyperspace by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Quest2ROS</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Sidebar -->
+			<section id="sidebar">
+				<div class="inner">
+					<nav>
+						<ul>
+							<li><a href="#intro">Q2R</a></li>
+							<li><a href="#method">Getting the App</a></li>
+							<li><a href="#ros">ROS code</a></li>
+							<li><a href="#pp">Privacy policy</a></li>
+							<li><a href="#cite">How to Cite</a></li>
+							<li><a href="#contact">Contact</a></li>
+						</ul>
+					</nav>
+				</div>
+			</section>
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Intro -->
+					<section id="intro" class="wrapper style1 fullscreen fade-up">
+						<div class="inner">
+							<h2>							<h2>Quest2ROS: An App to Facilitate Teleoperating Robots</h2>
+ </h2>
+							<!--h3> Michael C. Welle, Niels Ingelhag, Martina Lippi ,Maciej K. Wozniak, Andrea Gasparri, Danica Kragic</h3-->
+							<p>
+								Quest2ROS enables the user to set an IP and PORT to connect to a ROS node via the ROS-TCP-Connector via a VR interface. 
+The app publishes the relative position and orientation (as PoseStamped), the velocity (Twist), and the button presses of both controllers (custom ROS message). It offers a subscriber for haptic feedback (frequency and amplitude of controller vibration) for each controller.
+Ideal to set up a teleoperation for robots running ROS.
+	</p>
+							<p>
+							</p>
+
+
+
+
+						</div>
+					</section>
+
+
+					<!-- Method -->
+					<section id="method" class="wrapper style2 fade-up">
+						<div class="inner">
+							<h2>Quest2ROS</h2>
+
+							<div class="row">
+								<!--article class="col-4 col-12-xsmall work-item"-->
+									<video controls="" class="overview-video">
+									  <source src="videos/q2rtrailer.mp4" type="video/mp4">
+									</video>
+								<!--/article-->
+							</div>
+
+							<p> 								
+								<h3>Direct link to Q2R app: TODO </h3>
+
+							</p>
+
+							<p> 
+
+								Quest2ROS enables the user to set an IP and PORT to connect to a ROS node via the ROS-TCP-Connector via a VR interface. 
+								The app publishes the relative position and orientation (as PoseStamped), the velocity (Twist), and the button presses of both controllers (custom ROS message). It offers a subscriber for haptic feedback (frequency and amplitude of controller vibration) for each controller.
+								Ideal to set up a teleoperation for robots running ROS.
+								</p>
+
+							<p> 
+
+								The relative frame for each controller can be set by pressing both buttons on the controller respectively. For the best intuitive performance line the controller up with the robotic frame and press both buttons (A+B for the right controller, X+Y for the left controller)
+								</p>
+
+							<p> 
+
+								<b> Publishers:</b>
+									<ul>
+										<li>ovr2ros_left_hand_pose</li>
+										<li>ovr2ros_left_hand_twist</li>
+										<li>ovr2ros_left_hand_inputs</li>
+										<li>ovr2ros_right_hand_pose</li>
+										<li>ovr2ros_right_hand_twist</li>
+										<li>ovr2ros_right_hand_inputs</li>
+									</ul>
+
+								</p>
+
+							<p> 
+
+								The pose is of ROS message type
+								<a href="https://docs.ros.org/en/noetic/api/geometry_msgs/html/msg/PoseStamped.html">PoseStamped</a>
+								), the velocity is a
+								<a href="https://docs.ros.org/en/noetic/api/geometry_msgs/html/msg/Twist.html">Twist</a> 
+								 message type, and the inputs are via a custom message:
+								<ul>
+									<li>bool button_upper</li>
+									<li>bool button_lower</li>
+									<li>float32 thumb_stick_horizontal</li>
+									<li>float32 thumb_stick_vertical</li>
+									<li>float32 press_index</li>
+									<li>float32 press_middle</li>
+								</ul>
+
+								</p>
+
+							<p> 
+								A haptic feedback can be provided by sending a custom ROS message to the controllers controlling the frequency and amplitude of the controller vibration:
+								<ul>
+									<li> float32 frequency</li>
+									<li> float32 amplitude</li>
+								</ul>
+
+								</p>
+
+							<p> 
+								<b> Subscribers: </b>
+								<ul>
+								<li>ovr2ros_left_hand_haptic_feedback </li>
+								<li>ovr2ros_right_hand_haptic_feedback </li>
+							</ul>
+
+
+
+
+							</p>
+
+						</div>
+					</section>
+
+
+					<section id="ros" class="wrapper style3 fade-up">
+
+								<div class="inner">
+									<h2>ROS code repository</h2>
+
+									<p> <a class="button mybutton"  href="TODO.html" target="_blank" > ROS code repository</a> </p>
+									
+
+									<p> </p>
+
+
+								</div>
+
+
+							</section>
+
+			
+
+					<section id="pp" class="wrapper style4 fade-up">
+
+								<div class="inner">
+									<h2>Privacy policy</h2>
+
+									<p> <a class="button mybutton"  href="privacy_policy.html" target="_blank" > Q2Rs Privacy policy</a> </p>
+									
+
+									<p> </p>
+
+
+								</div>
+
+
+							</section>
+
+
+						<!-- Cite -->
+					<section id="cite" class="wrapper style4 fade-up">
+
+						<div class="inner">
+							<h2>Use the following to cite us:</h2>
+							<p class="p-code"><code>@software{q2r2023,<br>
+  title={Quest2ROS: An App to Facilitate Teleoperating Robots},<br>
+  author={Welle, Michael C and Ingelhag, Niels Lippi, Martina and Wozniak, Maciej K. and Gasparri, Andrea and Kragic, Danica},<br>
+    url = {TODO},<br>
+    version = {1.0}, <br>
+  date={2023-11-15}<br>
+}
+</code></p>
+ Martina Lippi ,Maciej K. Wozniak, Andrea Gasparri
+							<p> </p>
+
+
+						</div>
+
+
+					</section>
+
+
+					<!-- five -->
+					<section id="contact" class="wrapper style1 fade-up">
+						<div class="inner">
+							<h2>Contact</h2>
+							<ul>
+										<li>Michael C. Welle; mwelle(at)kth.se; KTH Royal Institute of Technology, Sweden</li>
+
+									</ul>
+
+						</div>
+					</section>
+
+
+
+
+			</div>
+
+		<!-- Footer -->
+			<footer id="footer" class="wrapper style1-alt">
+				<div class="inner">
+				<ul class="copyright">
+						<li>&copy; All rights reserved</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+					</ul>
+				</div>
+			</footer>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
