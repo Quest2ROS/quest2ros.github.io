@@ -22,6 +22,7 @@
 						<ul>
 							<li><a href="#intro">Q2R</a></li>
 							<li><a href="#method">Getting the App</a></li>
+							<li><a href="#performance">Performance</a></li>
 							<li><a href="#ros">ROS code</a></li>
 							<li><a href="#pp">Privacy policy</a></li>
 							<li><a href="#cite">How to Cite</a></li>
@@ -69,7 +70,7 @@ Ideal to set up a teleoperation for robots running ROS.
 							</div>
 
 							<p> 								
-								<h3>Alpha: <a href="https://www.meta.com/s/1stEAnW1u" > Link </a> </h3>
+								<h3> <a href="https://www.meta.com/s/1stEAnW1u" > Click the link to get the app (Alpha version) - Quest2ROS: An App to Facilitate Teleoperating Robots </a> </h3>
 
 							</p>
 
@@ -85,16 +86,34 @@ Ideal to set up a teleoperation for robots running ROS.
 								The relative frame for each controller can be set by pressing both buttons on the controller respectively. For the best intuitive performance line the controller up with the robotic frame and press both buttons (A+B for the right controller, X+Y for the left controller)
 								</p>
 
+								<div class="row">
+
+								<article class="col-4 col-12-xsmall work-item">
+									<h3>Calibration to robot frame (with audio)</h3>
+									<video width="320" height="240" controls>
+									  <source src="videos/cali.mp4" type="video/mp4">									
+									</video>
+								</article>
+								<article class="col-4 col-12-xsmall work-item">
+									<h3>Example usage on Frank Panda (x10)</h3>
+									<video width="320" height="240" controls>
+									  <source src="videos/q2r_franka_demo.mp4" type="video/mp4">									
+									</video>
+								</article>	
+							</div>
+
+							<p></p>
+
 							<p> 
 
 								<b> Publishers:</b>
 									<ul>
-										<li>ovr2ros_left_hand_pose</li>
-										<li>ovr2ros_left_hand_twist</li>
-										<li>ovr2ros_left_hand_inputs</li>
-										<li>ovr2ros_right_hand_pose</li>
-										<li>ovr2ros_right_hand_twist</li>
-										<li>ovr2ros_right_hand_inputs</li>
+										<li>/q2r_left_hand_pose  </li>
+										<li>/q2r_left_hand_twist  </li>
+										<li>/q2r_left_hand_inputs  </li>
+										<li>/q2r_right_hand_pose  </li>
+										<li>/q2r_right_hand_twist  </li>
+										<li>/q2r_right_hand_inputs  </li>
 									</ul>
 
 								</p>
@@ -129,8 +148,8 @@ Ideal to set up a teleoperation for robots running ROS.
 							<p> 
 								<b> Subscribers: </b>
 								<ul>
-								<li>ovr2ros_left_hand_haptic_feedback </li>
-								<li>ovr2ros_right_hand_haptic_feedback </li>
+								<li>/q2r_left_hand_haptic_feedback </li>
+								<li>/q2r_right_hand_haptic_feedback </li>
 							</ul>
 
 
@@ -140,6 +159,68 @@ Ideal to set up a teleoperation for robots running ROS.
 
 						</div>
 					</section>
+
+						<section id="performance" class="wrapper style1 fade-up">
+
+								<div class="inner">
+									<h2>Performance</h2>
+
+									<h3>Accuracy</h3>								
+
+									<p> Mean accuracy from approximately 1 meter was estimated using 2180 data points to be <b>0.46 mm</b>  </p>
+									<div class="column">
+							    <img src="imgs/accuracy_hist.png" alt="accuracy histogram" width="500" class="img-list">
+							  </div>
+
+							  <p> </p>
+							  <h3>Latency</h3>								
+
+									<p> Mean latency was masured over eight trails to be <b>82 ms</b>  </p>
+									<p> <a class="button mybutton"  href="latency_measurment.html" target="_blank" > Latency measurements</a> </p>
+									
+
+									<p> </p>
+							  <h3>Frequency</h3>	
+							  	<p> Mean Frequency was masured over all topics to be <b>71.86 Hz</b>  </p>
+
+							  <table>
+								  <tr>
+								    <th>Topic</th>
+								    <th>Frequency</th>
+								  </tr>
+								  <tr>
+								    <td>/q2r_left_hand_pose</td>
+								    <td>72.08 HZ</td>
+								  </tr>
+								  <tr>
+								    <td>/q2r_left_hand_twist</td>
+								    <td>71.83 HZ</td>
+								  </tr>
+								  <tr>
+								    <td>/q2r_left_hand_inputs</td>
+								    <td>71.83 HZ</td>
+								  </tr>
+								  <tr>
+								    <td>/q2r_right_hand_pose</td>
+								    <td>71.87 HZ</td>
+								  </tr>
+								  <tr>
+								    <td>/q2r_right_hand_twist</td>
+								    <td>71.78 HZ</td>
+								  </tr>
+								  <tr>
+								    <td>/q2r_right_hand_inputs</td>
+								    <td>71.81 HZ</td>
+								  </tr>
+
+								</table>
+
+
+
+								</div>
+
+
+							</section>
 
 
 					<section id="ros" class="wrapper style3 fade-up">
